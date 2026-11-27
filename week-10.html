@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A reading repository about information and communication." />
+  <title>Casey's CPJ | Week Nine</title>
+  <link rel="stylesheet" href="css/weekly-process-style.css" />
+</head>
+
+<body>
+
+  <div class="running-label">10</div>
+
+  <div class="site" id="site">
+
+    <header class="site-header">
+      <a class="brand" href="cover.html">CASEY'S CPJ</a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="process-summary.html" class="active">PROCESS</a>
+        <a href="index.html">READINGS</a>
+        <a href="#repository">VISUAL REFERENCES</a>
+      </nav>
+
+      <div class="timer" id="clock"></div>
+    </header>
+
+    <main class="section">
+
+      <div class="page">
+
+        <section class="hero">
+          <h1 class="headline">The one where I perform surgery on a clock</h1>
+          <div class="media">
+            <img src="images/weekly-process/week-10/clock-parts.webp" class="zoom"></img>
+          </div>
+          <div class="caption">Scooping the guts of the clock out...very devastating</div>
+        </section>
+
+
+        <section class="row">
+          <h2 class="label">The direction of yesterday</h2>
+          <div class="body">
+
+            <p> I created a website that allows you to locate temporal phrases on a cube, and add your own as well. It
+              is subjective in a sense that you are the one who decides where to place it, where are its coordinates.
+            </p>
+
+            <p> Just like this very website and "the archive of felt time", I created my own wireframes on Figma and
+              brought it over to Claude to help me figure out the heavy lifting. Even at this stage it feels like
+              cheating!
+            </p>
+
+          </div>
+
+          <!-- carousel -->
+
+          <section class="media-row">
+            <div class="media">
+              <div class="carousel-wrap">
+                <div class="carousel-container" id="carousel">
+
+                  <div class="carousel-slide">
+                    <img src="images/weekly-process/week-9/web-wireframes-1.webp" class="zoom">
+
+                    <p class="slide-caption">
+                      My wireframes, done on Figma. The user is able to add and customise their "word", it can be a word
+                      that they know and use at home, or a word that they made up.
+                    </p>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img src="images/weekly-process/week-9/web-wireframes-2.webp" class="zoom">
+                    <p class="slide-caption">
+                      My wireframes, done on Figma. This is the homepage of the website.
+                    </p>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img src="images/weekly-process/week-9/web-wireframes-3.webp" class="zoom">
+                    <p class="slide-caption">
+                      What they see when they tap on the word. Ashlee also suggested having a hover mode for this
+                      instead (more intuitive), will be adding that suggestion, thanks Ashlee!!
+                    </p>
+                  </div>
+
+
+
+
+                </div>
+
+                <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous slide">←</button>
+                <button class="carousel-btn next" id="carousel-next" aria-label="Next slide">→</button>
+              </div>
+
+              <div class="carousel-caption" id="carousel-caption"></div>
+
+            </div>
+          </section>
+
+
+
+        </section>
+
+        <section class="row">
+          <h2 class="label">The destruction of the 24-hour clock</h2>
+
+          <div class="body">
+            <p>This series of experiments will help me to understand what aspect of the making of the 24 hour clock
+              affects the reader's perception the most. Factors include: clock hands, clock face, clock numbers, clock
+              shape etc.</p>
+          </div>
+
+        </section>
+
+
+        <section class="row">
+          <h2>01</h2>
+          <h3>Changing angles at <br>which the hands rotate</h3>
+
+          <section class="media">
+            <div class="embed-crop">
+              <iframe src="https://editor.p5js.org/casey.wong/full/DojctprrA" width="100%" height="352" frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div class="caption" style="text-align:center;">Original, should be telling real-time</div>
+          </section>
+
+
+          <section class="media-row">
+
+            <!-- First row-->
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/OrtNU9kxV" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Changed the minute, second and hour value to go by
+                seconds.</div>
+            </div>
+
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/w5Rx5dmQH" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Changed the minute, second and hour value to go by
+                hours.</div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/bggnb7sIC" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Changed the minute, second and hour value to go by
+                minutes</div>
+            </div>
+
+          </section>
+
+          <!-- second row-->
+
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/_w3Zc_y-w" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">// Calculate angle for each hand
+                <br>let secondAngle = map(second(), 68, 60, 0, 360);
+                <br>let minuteAngle = map(minute(), 91, 60, 0, 360);
+                <br>let hourAngle = map(hour(), 10, 12, 0, 360);
+                <br>// change values of the first value (random number generator)
+              </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/5Sy-f4NvT" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">// Calculate angle for each hand
+                <br>let secondAngle = map(second(), 70, 60, 0, 360);
+                <br>let minuteAngle = map(minute(), 93, 60, 0, 360);
+                <br>let hourAngle = map(hour(), 7, 12, 0, 360);
+                <br>// change values of the first value (random number generator), second iteration
+              </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/Fj6kbPo1e" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">// Calculate angle for each hand
+                <br>let secondAngle = map(second(), 70, 60, 0, 360);
+                <br>let minuteAngle = map(minute(), 93, 60, 0, 360);
+                <br>let hourAngle = map(hour(), 7, 12, 0, 360);
+                <br>// change values of the first value (random number generator), third iteration
+              </div>
+            </div>
+
+
+          </section>
+
+
+        </section>
+
+        <section class="row">
+          <h2>02</h2>
+          <h3>Changing the number of clock hands</h3>
+
+          <!-- first row -->
+
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/-LKBESWhU" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black"> Added (2) second hand, and set its rotation to 50
+              </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/5Sy-f4NvT" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black"> Added (3) second hand, and set its rotation to 40
+              </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/_VQzXZtfK" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black"> Added (8) second hand, and decreased its rotation
+                by decrements of 10</div>
+            </div>
+
+
+
+          </section>
+
+          <!-- second row -->
+
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/TpYbZYvti" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black"> Using the for loop, multiplied each hand by 20
+              </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/ztiHH0E7P" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black"> Using the for loop, multiplied each hand by 5</div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/IHdktcCdS" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Using the for loop, multiplied each hand by 50</div>
+            </div>
+
+
+
+          </section>
+
+        </section>
+
+        <section class="row">
+          <h2>03</h2>
+          <h3>Changing the length of clock hands</h3>
+
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/u6JhDwcKr" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Increased lengths of all hands by 5</div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/LJHf6FxIt" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Decreased lengths of all hands by 5 </div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/218E-ZrBR" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Multiplied lengths of all hands through random
+                number generator (-16, 3, -2)</div>
+            </div>
+
+
+          </section>
+
+
+
+
+        </section>
+
+        <section class="row">
+          <h2>04</h2>
+          <h3>Changing the position of the clock hands</h3>
+
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/Cz2OshiJk" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Assigned random coordinates to the hands via random
+                number generator</div>
+
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/sX1tnLnXX" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Shifted the clock face via translate(width / 3,
+                height / 5)</div>
+
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/bLS9v3Gtm" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Assigned random coordinates to the position of the
+                clock hands, iteration 2</div>
+
+            </div>
+
+
+
+          </section>
+
+
+        </section>
+
+        <section class="row">
+          <h2>05</h2>
+          <h3>Changing clock interface</h3>
+
+          <!-- first row -->
+          <section class="media-row">
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/2-N9u97bT" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Changed position of numbers on the clock</div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/f7bPteeLc" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Jumbled up the numbers on the clock</div>
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/1PgTa8IV-" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Constantly moving numbers on the clock</div>
+            </div>
+
+
+
+          </section>
+
+          <!-- second row -->
+          <section class="media-row">
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/znywMjwSE" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Included numbers up till 50; what if there were 50
+                hours in the day</div>
+
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/7Q7nMkXRP" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Different spacing in between</div>
+
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/e3Ojct5-1" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Different spacing in between, with experimentations
+                on font size</div>
+
+            </div>
+
+
+          </section>
+
+
+
+        </section>
+
+        <section class="row">
+          <h3>06</h3>
+          <h2 class="label">
+            Changing the motion of the clock face
+          </h2>
+
+          <section class="media-row">
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/KgAd1q6dG" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Different spacing in between, with experimentations
+                on font size</div>
+
+            </div>
+
+            <div class="media third">
+              <div class="embed-crop">
+                <iframe src="https://editor.p5js.org/casey.wong/full/DukftrOmk" width="100%" height="352"
+                  frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
+              <div class="caption" style="border: 1px dotted black">Different spacing in between, with experimentations
+                on font size</div>
+
+            </div>
+
+          </section>
+
+
+
+        </section>
+
+        <section class="row">
+          <h2 class="label">Physically destroying that clock</h2>
+
+          <div class="media">
+            <video src="videos/week-10/destroy.mp4" playsinline controls preload="metadata"></video>
+            <div class="caption">Installing new hands for the printed paper clocks</div>
+          </div>
+
+          <div class="body">
+            <p>In addition to digital experiments, I thought of presenting its mangled form physically. Could this
+              affect the way its perceived? Could this also be a possible FYP outcome? These experiments had the same
+              aim as the digital ones, but were physical as I wanted to present something physical this week...Also
+              wanted to put that single hole puncher to good use!</p>
+
+            
+          </div>
+        </section>
+
+        <section class="row">
+          <h2 class="label">Piecing together a really budget speculative film</h2>
+
+          <div class=body>
+            <p>Based on feedback from last week, I pieced together a really quick speculative film that roughly
+              encapsulates the storyline that I want to show for the final. This is definitely not the final product, I
+              probably won't be the one acting, but this would help me in figuring out the story flow as well as the
+              shot angles.</p>
+
+            <p>Through this short film, I thought of establishing the fictitious world we find ourselves in with the
+              context of the 'clockadoodledoo'. How does the clock work? How do we interact with it? Like Edward Hall
+              says, time speaks. So how we weave it into our conversations matter, thus I really wanted to show how we
+              would converse with it in this fictitious universe.</p>
+          </div>
+
+          <section class="media-row">
+            <div class="media">
+              <div class="carousel-wrap">
+                <div class="carousel-container" id="carousel">
+
+                  <div class="carousel-slide" data-caption="">
+                    <img src="images/weekly-process/week-10/storyboard-2.png" alt="">
+                    <p class="slide-caption">Page 1</p>
+                  </div>
+
+                  <div class="carousel-slide" data-caption="">
+                    <img src="images/weekly-process/week-10/storyboard-1.png" alt="">
+                    <p class="slide-caption">Page 2</p>
+                  </div>
+
+
+
+                </div>
+
+                <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous slide">←</button>
+                <button class="carousel-btn next" id="carousel-next" aria-label="Next slide">→</button>
+              </div>
+
+              <!-- <div class="carousel-caption">
+              Pages from Eugenia's CPJ, taken by Xiaotong
+            </div> -->
+
+            </div>
+          </section>
+
+        </section>
+
+        <section class="row">
+          <h2 class="label">Feedback</h2>
+
+          <div class="body">
+            <p>
+              I think the feedback was positive in terms of the variations of experiments, particularly for the destruction of the clocks—which could even be part of the workshops. But mostly I kept thinking, what do these makings lead to? Are they a part of the dissertation experimentations?
+            </p>
+          </div>
+
+        </section>
+
+        
+       
+
+
+
+      </div>
+
+
+
+      <div class="page">
+
+        <!-- dropdown -->
+      
+
+
+
+
+
+
+        <section class="reflection">
+          <div class="eyebrow">Reflection of the week</div>
+          <img src="images/weekly-process/week-10/meme.gif" style="margin-bottom: 20px;">
+          <blockquote>
+            This whole week can be summed up in the gif—its me while reading my little 'chats' with Claude while
+            refining my research goals. While starting to write my dissertation, and trying to define my goals, I have
+            come to the sobering realisation that my research outline was something that I don't really want to
+            do...༼;´༎ຶ ۝ ༎ຶ༽... But we
+            have to move on. I think its my 10th time saying this (in the past 3 weeks) but I'm still feeling...wait for
+            it...LOST. But after (as I hate to admit it) chatting with Claude and refining the questions for my guerilla
+            workshop, I am feeling abit more hopeful. I hope I can extract some really juicy answers that can push this
+            project forward or I shall continue feeling lost. I also need to be more decisive, and really get to the
+            heart of what I want to do. Perhaps I'll do a pros and cons list or something. Mindmaps are useless to me now.
+          </blockquote>
+
+        </section>
+
+
+
+      </div>
+
+    </main>
+
+    <footer class="page-nav">
+      <a class="nav-back" href="week-9.html">← BACK</a>
+      <a class="nav-top" href="#top">TOP ↑</a>
+      <a class="nav-next" href="week-11.html">NEXT →</a>
+    </footer>
+
+
+
+
+  </div>
+
+  <div id="lightbox">
+    <img src="" alt="">
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,920 @@
+/* ============================================
+   GRID TOKENS
+   12 columns × 100px, 50px gutter, 70px margin
+   Content width  = 12*100 + 11*50           = 1750px
+   Frame width    = 1750 + 70*2              = 1890px
+   ============================================ */
+@import url('https://use.typekit.net/gkq3lrw.css');
+
+@font-face {
+  font-family: "Standard";
+  src: url("standard-font/standard-book-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Standard";
+  src: url("standard-font/standard-book-italic-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+:root {
+  --margin: 70px;
+  --gutter: 50px;
+
+  --bg: #ffffff;
+  --text: #321102;
+  --muted: #8d8280;
+  --line: rgba(38, 33, 32, 0.75);
+
+  /* aliases used throughout the page (previously undefined) */
+  --ink: var(--text);
+  --quote: var(--muted);
+  --rule: var(--line);
+  --text-quiet: var(--muted);
+
+  --serif: "nocturne-serif-lights", serif;
+  --sans: "Standard", sans-serif;
+  --mono: "roboto-mono", monospace;
+
+  --section-gap: 160px;
+  --inner-gap: 20px;
+}
+
+/* cursor */
+html,
+body,
+a,
+.carousel-btn,
+.dropdown summary {
+  /* Syntax: url("path-to-image"), fallback-keyword; */
+  cursor: url('cursor.png') 10 10, auto;
+}
+
+
+body {
+  font-family: "Standard", serif;
+}
+
+em,
+i {
+  font-style: italic;
+  /* picks up the real italic file */
+}
+
+/* font-family: synthese, sans-serif;
+font-weight: 400;
+font-style: normal; */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  min-width: 1200px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* background-color: rgba(245, 245, 245); */
+  /* border-bottom: 1px solid rgba(245, 245, 245, 0.5); */
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.brand {
+  grid-column: 1 / span 2;
+  font-weight: 500;
+}
+
+.nav {
+  grid-column: 4 / span 3;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  transition: opacity 0.2s ease;
+}
+
+.nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.nav a:hover {
+  opacity: 0.5;
+}
+
+.timer {
+  grid-column: 12;
+  justify-self: end;
+}
+
+/* ---------- outer page section (12-col grid) ---------- */
+.section {
+  min-height: 310px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding: 25px var(--margin) 100px;
+  background-color: var(--bg);
+  row-gap: var(--section-gap);
+}
+
+/* each "page" of content re-establishes the 12-col grid at full width */
+.page {
+  grid-column: 4 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--section-gap);
+}
+
+/* ---------- hero ---------- */
+.hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  position: relative;
+  padding: 30px 0 60px;
+}
+
+h1.headline {
+  grid-column: 1 / 11;
+  font-size: 60px;
+  line-height: 1.14;
+  font-weight: 400;
+  font-family: var(--serif);
+  color: var(--ink);
+  margin-bottom: var(--inner-gap);
+  margin-top:0;
+}
+
+/* hyperlinks */
+main a {
+  text-decoration: dotted underline;
+}
+
+main a:hover {
+  color: var(--text);
+  opacity: 0.5;
+  text-underline-offset: 3px;
+}
+
+/* ---------- media blocks ---------- */
+.media-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-bottom: 25px;
+}
+
+.media {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  opacity: 80%;
+  /* border: 0.5px solid black; */
+}
+
+.media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.media.third {
+  grid-column: span 4;
+}
+
+.caption {
+  margin-top: 0.5em;
+  margin-bottom: 20px;
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-quiet);
+  text-transform: uppercase;
+}
+
+/* carousel container */
+/* The outer wrapper of your carousel */
+.carousel-container {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  /* Adjust based on your preferred design */
+  margin: 0 auto;
+
+
+  /* Enforces smooth momentum scrolling and native swiping */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* CRITICAL: Tells the container to snap horizontally */
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide the native scrollbar for a clean UI */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  align-items: flex-start;
+}
+
+/* Individual slide item */
+.carousel-slide {
+  flex: 0 0 100%;
+  aspect-ratio: auto;
+  /* pick the shape you want */
+  scroll-snap-align: start;
+
+}
+
+/* Responsive images inside the slides */
+/* .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;     /* or "center 20%" */
+/* display: block; */
+
+
+/* Responsive images inside the slides */
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  /* Set your preferred fixed height */
+  object-fit: cover;
+  /* Prevents images from distorting */
+  display: block;
+  object-position: center;
+  opacity: 80%;
+}
+
+.slide-caption {
+  font-family: var(--mono);
+  margin: 0.5rem 0 0;
+  font-size: 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* .carousel-caption {
+  font-family: var(--mono);
+  margin-top: 0.75rem;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+} */
+
+.carousel-wrap {
+  position: relative;
+  grid-column: 1 / -1;
+  /* margin-block: calc(var(--inner-gap) - var(--section-gap)); */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #dcdcdc;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  color: #8d8280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity .10s ease;
+}
+
+.carousel-btn:hover {
+  opacity: 0.7;
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+
+/* ---------- two-column text row ---------- */
+.row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--inner-gap);
+  margin-bottom: 0;
+}
+
+
+
+.row img {
+  width: 100%;
+  height: auto;
+  /* aspect-ratio: 4 / 3;      pick any ratio you like: 1 / 1, 3 / 4, 16 / 9 */
+  object-fit: contain;
+  /* shows the whole image; use "cover" to fill the box and crop */
+  object-position: center;
+  display: block;
+  opacity: 0.8;
+  /* border: 0.5px solid black; */
+  margin-bottom: 10px;
+}
+
+.row .label {
+  grid-column: 1/ 6;
+  /* font-family: "ojuju", sans-serif; */
+  font-size: 32px;
+  line-height: 1.3;
+  color: var(--ink);
+  font-weight: 400;
+  padding-right: var(--gutter);
+  /* background-color: aquamarine; */
+}
+
+.row h3 {
+  grid-column: 1/9;
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;       /* optional, to match your other headings */
+  line-height: 1.3;
+}
+
+.row .body {
+  grid-column: 5 / 13;
+}
+
+.row .body p {
+  margin: 0 0 16px;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 62ch;
+}
+
+.row .body p:last-child {
+  margin-bottom: 0;
+}
+
+.row .body p.narrow {
+  max-width: 48ch;
+}
+
+sup.ref {
+  font-size: 9px;
+}
+
+.media-row-full,
+.row,
+.embed-row {
+  grid-column: 1 / -1;
+}
+
+/* .body img{
+  padding:15px;
+} */
+
+
+
+/* ---------- footnotes ---------- */
+.footnotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--gutter);
+  margin-top: 22px;
+}
+
+.footnotes .note .num {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-quiet);
+  margin-bottom: 6px;
+}
+
+.footnotes .note p {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text);
+}
+
+/* ---------- little footnotes at the end of the ---------- */
+.improve-grid {
+  grid-column: 5 / 13;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--gutter);
+  row-gap: 26px;
+}
+
+.improve-grid .item.full {
+  grid-column: 1 / -1;
+}
+
+.improve-grid .item .num {
+  font-family: var(--sans);
+  font-size: 18px;
+  color: var(--text-quiet);
+  margin-bottom: 12px;
+}
+
+.improve-grid .item p {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 46ch;
+  margin-top: 10px;
+}
+
+.improve-grid .item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  /* pick any ratio you like: 1 / 1, 3 / 4, 16 / 9 */
+  object-fit: contain;
+  /* shows the whole image; use "cover" to fill the box and crop */
+  object-position: center;
+  display: block;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  /* use margin here; padding would shrink the image box */
+}
+
+/* ---------- quote sections ---------- */
+.quote-plain {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding: 90px var(--margin) 110px;
+  margin-top: 10px;
+}
+
+.quote-plain blockquote {
+  grid-column: 4 / 12;
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 34px;
+  text-align: center;
+  line-height: 1.55;
+  color: var(--quote);
+  font-weight: 400;
+  padding-bottom: 15px;
+  /* background-color: aqua; */
+}
+
+.quote-caption {
+  grid-column: 4 / 12;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.55;
+  color: var(--quote);
+  font-weight: 400;
+}
+
+.reflection {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-top: 10px;
+  padding-bottom: 90px;
+}
+
+.reflection .eyebrow {
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-quiet);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.reflection blockquote {
+  grid-column: 1 / 12;
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  /* font-style: italic; */
+  font-size: 30px;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.reflection blockquote:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.running-label {
+  position: fixed;
+  top: 10%;
+  font-family: var(--serif);
+  font-size: 60px;
+  color: #d3d3d3;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 60%;
+  pointer-events: none;
+  left: calc(10px + var(--margin));
+}
+
+/* ---------- footer nav ---------- */
+footer.page-nav {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: center;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+  padding-top: 26px;
+  padding-bottom: 50px;
+  font-family: var(--mono);
+  font-size: 12px;
+  z-index: 100;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-back {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.nav-top {
+  grid-column: 6 / span 2;
+  justify-self: center;
+  transition: .15s ease-in;
+}
+
+.nav-next {
+  grid-column: 12;
+  justify-self: end;
+}
+
+footer.page-nav a {
+  transition: opacity .15s ease;
+}
+
+footer.page-nav a:hover {
+  opacity: 0.6;
+}
+
+footer.page-nav a {
+  transition: opacity .15s ease;
+}
+
+footer.page-nav a:hover {
+  opacity: 0.6;
+}
+
+footer.page-nav {
+  pointer-events: none;
+}
+
+footer.page-nav a {
+  pointer-events: auto;
+}
+
+
+/* zoom image */
+/* To zoom in image */
+
+/* 1. lightbox
+ * click on an image (must implement class="zoom") to go full size 
+ * from: https://code-boxx.com/image-zoom-css-javascript
+ */
+
+#lightbox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity ease 0.3s;
+}
+
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  margin: auto;
+  width: auto;
+  height: 90%;
+  object-fit: cover;
+  box-shadow: 2rem 2rem 4rem rgb(0, 0, 0, 0.5);
+}
+
+.zoom {
+  cursor: pointer;
+}
+
+::selection {
+  color: rgb(255, 127, 149);
+  background: lightgoldenrodyellow;
+}
+
+/* Dropdown */
+/* ---------- dropdown ---------- */
+.dropdown {
+  border-top: 2.5px dotted var(--line);
+}
+
+.dropdown-caption {
+  margin: 6px 0 0;
+  /* small gap under the image, nothing below */
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.55;
+  text-transform: uppercase;
+  /* matches your other captions; remove if you don't want it */
+  color: var(--text-quiet);
+}
+
+.dropdown:last-of-type {
+  border-bottom: 2.5px dotted var(--line);
+}
+
+.dropdown summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  cursor: pointer;
+  list-style: none;
+  /* removes the default triangle (Firefox/Chrome) */
+  font-family: var(--sans);
+  font-size: 22px;
+  color: var(--ink);
+  transition: opacity .15s ease;
+}
+
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Safari */
+.dropdown summary:hover {
+  opacity: 0.5;
+}
+
+/* + / – indicator */
+.dropdown summary::after {
+  content: "+";
+  font-family: var(--sans);
+  font-size: 20px;
+  color: var(--text-quiet);
+}
+
+.dropdown[open] summary::after {
+  content: "–";
+}
+
+.dropdown-content {
+  padding: 0 0 24px;
+}
+
+.dropdown-content p {
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+.dropdown-content img {
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  aspect-ratio: auto;
+  object-fit: initial;
+}
+
+/* Page Transparency */
+/* .ghost-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  /* clicks pass through to the real page */
+  /* z-index: 50; */
+  /* above content, below sticky header (100) */
+  /* mix-blend-mode: multiply; */
+  /* lets the page show through like tracing paper */
+  /* transition: opacity 0.3s ease; */
+/* } */
+
+/* .ghost-page.hidden {
+  opacity: 0;
+} */ 
+
+/* spacing */
+.hero {
+  padding-bottom: 0;
+}
+
+.media-row {
+  padding-bottom: 0;
+}
+
+.quote-plain {
+  padding: 0 var(--margin);
+  margin-top: 0;
+}
+
+.reflection {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.caption {
+  margin-bottom: 40px;
+}
+
+.carousel-container {
+  padding-bottom: 0;
+}
+
+.caption + .row,
+.caption + p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+/* embedding p5js, to hide ugly border */
+.embed-crop {
+  position: relative;
+  height: 352px;
+  overflow: hidden;
+}
+
+.embed-crop iframe {
+  position: absolute;
+  top: -50px;
+  /* tune this until the pink bar is just hidden */
+  left: 0;
+  width: 100%;
+  height: calc(100% + 60px);
+  /* keep the same number as top, so the sketch isn't squashed */
+  border: 0;
+}
+
+/* * { outline: 0.1px solid red; } */
+
+/* ---------- carousel inside .row .body: override row styles ---------- */
+.row .body .slide-caption {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.55;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--text-quiet);
+  margin: 0.5rem 0 0;
+  max-width: none;
+}
+
+.row .carousel-slide img {
+  object-fit: cover;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+.body .carousel-wrap {
+  max-width: 62ch;
+  font-size: 18px;      /* makes ch match the paragraphs */
+}
+
+.body .carousel-container {
+  max-width: none;
+  margin: 0;
+}
+
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  :root {
+    --margin: 28px;
+    --gutter: 24px;
+  }
+
+  h1.headline {
+    grid-column: 1 / -1;
+    font-size: 38px;
+  }
+
+  .row .label {
+    grid-column: 1 / -1;
+    padding-right: 0;
+    margin-bottom: 18px;
+  }
+
+  .row .body {
+    grid-column: 1 / -1;
+  }
+
+  .footnotes {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .improve-grid {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+
+  .media.third {
+    grid-column: 1 / -1;
+  }
+
+  .quote-plain blockquote {
+    grid-column: 1 / -1;
+    font-size: 24px;
+  }
+
+  .reflection blockquote {
+    grid-column: 1 / -1;
+    font-size: 22px;
+  }
+}
