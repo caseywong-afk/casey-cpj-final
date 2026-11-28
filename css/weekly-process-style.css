@@ -7,18 +7,19 @@
 @import url('https://use.typekit.net/gkq3lrw.css');
 
 @font-face {
-  font-family: "Standard";
-  src: url("standard-font/standard-book-webfont.woff2") format("woff2");
+  font-family: "ABC Areal";
+  src: url("css/abc-font/ABCAreal-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Standard";
-  src: url("standard-font/standard-book-italic-webfont.woff2") format("woff2");
+  font-family: "ABC Areal";
+  src: url("css/abc-font/ABCAreal-RegularItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
 }
+
 
 :root {
   --margin: 70px;
@@ -35,8 +36,8 @@
   --rule: var(--line);
   --text-quiet: var(--muted);
 
-  --serif: "nocturne-serif-lights", serif;
-  --sans: "Standard", sans-serif;
+  --serif: "scatterplot-vf", sans-serif;
+  --sans: "ABC Areal", sans-serif;
   --mono: "roboto-mono", monospace;
 
   --section-gap: 160px;
