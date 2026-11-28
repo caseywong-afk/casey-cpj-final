@@ -2,15 +2,15 @@
 @import url('https://use.typekit.net/gkq3lrw.css');
 
 @font-face {
-  font-family: "Standard";
-  src: url("standard-font/standard-book-webfont.woff2") format("woff2");
+  font-family: "ABC Areal";
+  src: url("css/abc-font/ABCAreal-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Standard";
-  src: url("standard-font/standard-book-italic-webfont.woff2") format("woff2");
+  font-family: "ABC Areal";
+  src: url("css/abc-font/ABCAreal-RegularItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
 }
